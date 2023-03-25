@@ -34,7 +34,7 @@ const SecondPage = () => {
   return (
     <div style={secondPageStyle}>
       <p style={firstChild}>Area he visited for marketing</p>
-      <p style={secondChild}>{val}</p>
+      <p style={secondChild}>{val || "No entry yet..."}</p>
     </div>
   );
 };
