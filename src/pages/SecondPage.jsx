@@ -1,14 +1,14 @@
-import { useContent } from "./ContentContext";
+import { useContent } from './ContentContext';
 
-const SecondPage = ({ id }) => {
+const SecondPage = () => {
   const { val } = useContent();
-  
+
   const secondPageStyle = {
     display: 'flex',
     flexDirection: 'column',
     margin: '1.5rem 5rem',
     padding: '6rem 15rem',
-    height: '94vh',
+    height: '93vh',
     boxShadow: '0 0 1px black',
     backgroundColor: 'white',
   };
@@ -32,10 +32,11 @@ const SecondPage = ({ id }) => {
   };
 
   return (
-    <div id={id} style={secondPageStyle}>
+    <div style={secondPageStyle}>
       <p style={firstChild}>Area he visited for marketing</p>
       <p style={secondChild}>{val}</p>
     </div>
   );
 };
+
 export default SecondPage;

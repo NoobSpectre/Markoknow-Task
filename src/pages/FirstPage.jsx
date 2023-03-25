@@ -1,8 +1,13 @@
-import { useState } from 'react';
 import { useContent } from './ContentContext';
+import { useNavigate } from 'react-router-dom';
 
-const FirstPage = ({ id }) => {
+const FirstPage = () => {
   const { val, handleChange } = useContent();
+  const navigate = useNavigate();
+
+  // const handleNextClick = () => {
+  //   navigate('/second-page');
+  // };
 
   const firstPageStyle = {
     display: 'flex',
@@ -10,7 +15,7 @@ const FirstPage = ({ id }) => {
     justifyContent: 'center',
     margin: '1.5rem 5rem',
     padding: '6rem 15rem',
-    height: '94vh',
+    height: '93vh',
     boxShadow: '0 0 1px black',
     backgroundColor: 'white',
   };
@@ -54,9 +59,9 @@ const FirstPage = ({ id }) => {
         value={val}
         onChange={handleChange}
       />
-      <a href={`#${id}`}>
-        <button style={btn}>Next</button>
-      </a>
+      <button style={btn} onClick={() => navigate('/second-page')}>
+        Next
+      </button>
     </div>
   );
 };

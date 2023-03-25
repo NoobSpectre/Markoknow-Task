@@ -1,18 +1,16 @@
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
 import FirstPage from './pages/FirstPage';
-import ContextProvider from './pages/ContentContext';
 import SecondPage from './pages/SecondPage';
 
 function App() {
-  const id = 'second-page';
-
   return (
-    <ContextProvider>
-      <div className="App">
-        <FirstPage id={id} />
-        <SecondPage id={id} />
-      </div>
-    </ContextProvider>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<FirstPage />} />
+        <Route path="/second-page" element={<SecondPage />} />
+      </Routes>
+    </div>
   );
 }
 
